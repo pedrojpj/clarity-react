@@ -217,7 +217,7 @@ module.exports = {
          {
             test: /\.scss$/,
             loader:
-               'style!css?importLodaders=1&localIndentName=[path]___[name]__[local]___[hash:base64:5]!sass-loader'
+               'style-loader!css-loader?importLodaders=1&localIndentName=[path]___[name]__[local]___[hash:base64:5]!sass-loader'
          }
          // ** STOP ** Are you adding a new loader?
          // Remember to add the new extension(s) to the "file" loader exclusion list.
