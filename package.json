@@ -1,7 +1,6 @@
 {
    "name": "clarity-react",
    "version": "0.0.0-development",
-   "private": true,
    "dependencies": {
       "@webcomponents/custom-elements": "^1.0.0-alpha.3",
       "clarity-icons": "^0.9.8",
@@ -63,10 +62,18 @@
    "scripts": {
       "start": "node scripts/start.js",
       "build": "node scripts/build.js",
+      "ci-publish": "ci-publish",
+      "prepublish": "npm run build",
+      "deploy-storybook": "storybook-to-ghpages",
       "test": "node scripts/test.js --env=jsdom",
       "semantic-release": "semantic-release pre && npm publish && semantic-release post",
       "storybook": "start-storybook -p 6006",
-      "build-storybook": "build-storybook"
+      "build-storybook": "build-storybook n-c .storybook -o docs"
+   },
+   "release": {
+      "analyzeCommits": "semantic-release-tamia/analyzeCommits",
+      "generateNotes": "semantic-release-tamia/generateNotes",
+      "verifyRelease": "semantic-release-tamia/verifyRelease"
    },
    "jest": {
       "collectCoverageFrom": [
