@@ -209,16 +209,16 @@ module.exports = {
          {
             test: /\.scss$/,
             loader:
-               'style!css?importLodaders=1&localIndentName=[path]___[name]__[local]___[hash:base64:5]!sass-loader',
+               'style-loader!css-loader?importLodaders=1&localIndentName=[path]___[name]__[local]___[hash:base64:5]!sass-loader',
             exclude: [paths.appComponents]
          },
          {
             test: /\.scss$/,
             loaders: [
-               'style',
-               'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]',
+               'style-loader',
+               'css-loader?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]',
                'resolve-url',
-               'sass'
+               'sass-loader'
             ],
             include: [paths.appComponents]
          }
