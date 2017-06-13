@@ -70,7 +70,9 @@
       "test": "node scripts/test.js --env=jsdom",
       "semantic-release": "semantic-release pre && npm publish && semantic-release post",
       "storybook": "start-storybook -p 6006",
-      "build-storybook": "build-storybook n-c .storybook -o docs"
+      "build-storybook": "build-storybook n-c .storybook -o docs",
+      "changelog:preview": "sr-changelog",
+      "changelog:commit": "sr-changelog commit"
    },
    "release": {
       "analyzeCommits": "semantic-release-tamia/analyzeCommits",
